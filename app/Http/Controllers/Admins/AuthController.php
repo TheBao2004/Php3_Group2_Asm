@@ -13,9 +13,6 @@ class AuthController extends Controller
 {
     public function showLoginForm()
     {
-
-        $user = [];
-
         return view('auth.admin.login');
     }
 
