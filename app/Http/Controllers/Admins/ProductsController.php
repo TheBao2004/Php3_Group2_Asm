@@ -24,7 +24,7 @@ class ProductsController extends Controller
     public function __construct()
     {
         $this->proDuct = new Product();
-        $bien = 0;
+        $bien = 2;
     }
     public function index()
     {
