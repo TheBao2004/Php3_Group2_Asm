@@ -24,6 +24,7 @@ class ProductsController extends Controller
     public function __construct()
     {
         $this->proDuct = new Product();
+        $bien = 0;
     }
     public function index()
     {
@@ -56,7 +57,7 @@ class ProductsController extends Controller
             $params['is_hot'] = $request->has('is_hot') ? 1 : 0;
             $params['is_hot_deal'] = $request->has('is_hot_deal') ? 1 : 0;
             $params['is_show_home'] = $request->has('is_show_home') ? 1 : 0;
-
+ 
             //sử lý ảnh đại diện
             if ($request->hasFile('hinh_anh')) {
                 $params['hinh_anh'] = $request->file('hinh_anh')->store('uploads/product', 'public');
