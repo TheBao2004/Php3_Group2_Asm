@@ -29,6 +29,7 @@ return new class extends Migration
             $table->boolean('is_hot')->default(true); // Gợi ý sản phẩm hot
             $table->boolean('is_hot_deal')->default(true); // Gợi ý sản phẩm giảm giá
             $table->boolean('is_show_home')->default(true); // Hiển thị sản phẩm trên trang chủ
+            $table->softDeletes();
             $table->timestamps(); // Thêm cột created_at và updated_at
         });
     }
