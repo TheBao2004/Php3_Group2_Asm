@@ -14,8 +14,11 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        $listOrder = Order::get();
-        return view('admins.order.index', compact('listOrder'));
+        $listOrder = Order::query()->orderByDesc('id')->get();
+
+        $status = Order::TRANG_THAI_DON_HANG;
+        
+        return view('admins.order.index', compact('listOrder','status'));
     }
 
     /**
@@ -46,29 +49,39 @@ class OrdersController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        $orders = Order::query()->findOrFail($id);
-        if (!$orders) {
-            return redirect()->route('order.index');
-        }
+    // public function edit(string $id)
+    // {
+    //     $orders = Order::query()->findOrFail($id);
+    //     if (!$orders) {
+    //         return redirect()->route('order.index');
+    //     }
 
-        return view('admins.order.update', compact('orders'));
-    }
+    //     return view('admins.order.update', compact('orders'));
+    // }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
     {
-        if ($request->isMethod('PUT')) {
-            $params = $request->except('_token', '_method');
+        $orDer = Order::query()->findOrFail($id);
 
-            $orders = Order::findOrFail($id);
-            $orders->update($params);
+        $currentStatus = $orDer->status;
 
-            return redirect()->route('order.index')->with('success', 'Cập nhật trạng thái thành công');
+        $newStatus = $request->input('status');
+
+        $statuss = array_keys(Order::TRANG_THAI_DON_HANG);
+        if ($currentStatus === Order::HUY_DON_HANG) {
+            return redirect()->route('order.index')->with('error', 'Đơn hàng đã hủy không thể thay đổi trạng thái');
         }
+        if (array_search($newStatus, $statuss) < array_search($currentStatus, $statuss)) {
+            return redirect()->route('order.index')->with('error', 'Không thể cập nhật ngược trạng thái đơn hàng');
+        }
+
+        $orDer->status = $newStatus;
+
+        $orDer->save();
+        return redirect()->route('order.index')->with('success', 'Cập nhật trạng thái thành công');
     }
 
     /**
