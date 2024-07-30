@@ -1,10 +1,11 @@
 <?php
 
 use App\Models\User;
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+use App\Models\Order;
 use PHPUnit\Metadata\Uses;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -16,13 +17,13 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(User::class)->constrained();
-            $table->integer('code');
+            $table->string('code', 100)->unique();
             $table->string('name', 100);
             $table->string('email', 100);
             $table->string('phone', 100);
             $table->string('address', 255);
             $table->string('description', 255);
-            $table->tinyInteger('status')->default(0);
+            $table->string('status')->default(Order::CHO_XAC_NHAN);
             $table->softDeletes();
             $table->timestamps();
         });
