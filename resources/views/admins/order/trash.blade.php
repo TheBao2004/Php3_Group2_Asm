@@ -62,8 +62,8 @@
                             </td>
                             <td>{{ $item->created_at->format('d/m/Y') }}</td>
                             <td>
-                                <a href="{{ route('order.restore', $item->id) }}" class="btn btn-warning">Khôi phục</a>
-                        <a href="{{ route('order.forceDelete', $item->id) }}" onclick="return confirm('Bạn có muốn xóa không?')" class="btn btn-danger">Xóa</a>
+                                <a href="{{ route('order.restore', $item->id) }}" class="btn btn-warning"><i class="fa fa-trash-restore"></i></a>
+                        <a href="{{ route('order.forceDelete', $item->id) }}" onclick="return confirm('Bạn có muốn xóa không?')" class="btn btn-danger"><i class="fa fa-trash"></a>
                             </td>
                         </tr>
                     @endforeach
