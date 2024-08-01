@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admins;
+namespace App\Http\Controllers\Clients;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -8,12 +8,12 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 
-
 class AuthController extends Controller
 {
+
     public function showLoginForm()
     {
-        return view('auth.admin.login');
+        return view('auth.client.login');
     }
 
     public function login(Request $request)
@@ -21,7 +21,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/');
+            return redirect()->intended('clients.index');
         }
 
         return back()->withErrors([
@@ -31,7 +31,7 @@ class AuthController extends Controller
 
     public function showRegistrationForm()
     {
-        return view('auth.admin.register');
+        return view('auth.client.register');
     }
 
     public function register(Request $request)
@@ -67,4 +67,6 @@ class AuthController extends Controller
         Auth::logout();
         return redirect()->route('login');
     }
+
+
 }
