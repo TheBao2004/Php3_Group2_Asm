@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers\Admins;
 
+<<<<<<< Updated upstream
 use App\Models\Comments;
+=======
+use App\Models\Comment;
+>>>>>>> Stashed changes
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,8 +18,13 @@ class CommentsController extends Controller
     public function index()
     {
         //
+<<<<<<< Updated upstream
         $listBinhLuan = Comments::with('product')->get();
       
+=======
+        $listBinhLuan = Comment::get();
+
+>>>>>>> Stashed changes
         return view('admins.comments.index',compact('listBinhLuan'));
     }
 
@@ -65,7 +74,11 @@ class CommentsController extends Controller
     public function destroy(string $id)
     {
         //
+<<<<<<< Updated upstream
         $binh_luan = Comments::findOrFail($id);
+=======
+        $binh_luan = Comment::findOrFail($id);
+>>>>>>> Stashed changes
 
         if ($binh_luan) {
             # code...
@@ -73,4 +86,8 @@ class CommentsController extends Controller
             return redirect()->route('comment.index');
         }
     }
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes

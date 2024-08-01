@@ -23,8 +23,13 @@
                     <tr>
                         <th>STT</th>
                         <th>Tên Người Dùng</th>
+<<<<<<< Updated upstream
                         {{-- <th>Tên Sản Phẩm</th> --}}
                         <th></th>
+=======
+                        <th>Tên Sản Phẩm</th>
+                
+>>>>>>> Stashed changes
                         <th>Nội Dung</th>
                         <th>Thời Gian</th>
                         <th>Hành Động</th>
@@ -34,8 +39,13 @@
                     <tr>
                         <th>STT</th>
                         <th>Tên Người Dùng</th>
+<<<<<<< Updated upstream
                         {{-- <th>Tên Sản Phẩm</th> --}}
                         <th></th>
+=======
+                        <th>Tên Sản Phẩm</th>
+                        
+>>>>>>> Stashed changes
                         <th>Nội Dung</th>
                         <th>Thời Gian</th>
                         <th>Hành Động</th>
@@ -47,8 +57,12 @@
 
                             <td>{{ $index + 1 }}</td>
                             <td>{{ $comment->user->name }}</td>
+<<<<<<< Updated upstream
                             <td></td>
                             {{-- <td>{{ $comment->product->ten_san_pham }}</td> --}}
+=======
+                            <td>{{ $comment->product->ten_san_pham }}</td>
+>>>>>>> Stashed changes
                             <td>{{ $comment->noi_dung }}</td>
                             <td>{{ $comment->thoi_gian }}</td>
                             <td>
@@ -70,4 +84,8 @@
             {{-- {{ route('comments.trash') }} --}}
         </div>
     </div>
+<<<<<<< Updated upstream
 @endsection
+=======
+@endsection
+>>>>>>> Stashed changes

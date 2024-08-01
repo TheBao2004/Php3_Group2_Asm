@@ -1,26 +1,30 @@
 <?php
 
-namespace App\Http\Controllers\Admins;
+namespace App\Http\Controllers\Clients;
 
-use App\Http\Controllers\Controller;
 use App\Models\Categories;
-use App\Models\Comment;
-use App\Models\Product;
-use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $category_count = Categories::count();
-        $product_count = Product::count();
-        $user_count = User::count();
-        $comment_count = Comment::count();
-        return view('admins.index',compact('product_count','category_count','user_count','comment_count'));
+        //
+        $search = $request->input('search');
+        $categories = Categories::where('active',1)->orderBy('name','ASC')->get();
+        $listProduct = Product::query()
+        ->when($search,function($query, $search){
+            return $query
+            ->where('ten_san_pham','like', "%{$search}%" );
+        })
+        ->paginate(2);
+        $product = Product::all();
+        return view('clients.index',compact('categories','listProduct','product'));
     }
 
     /**
