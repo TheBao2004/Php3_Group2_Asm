@@ -128,7 +128,7 @@
                                         </li>
                                         <li><a href="{{ route('clients.productcatedetail.shop') }}">shop <i class="fa fa-angle-down"></i></a>
                                             {{-- <ul class="dropdown">
-                                                
+
                                                 <li><a href="#">shop grid layout <i
                                                             class="fa fa-angle-right"></i></a>
                                                     <ul class="dropdown">
@@ -221,7 +221,7 @@
                                                 <li><a href="{{ route('register') }}">register</a></li>
                                             @endif
                                         </ul>
-                                        
+
                                     </li>
                                     <li>
                                         <a href="wishlist.html">
