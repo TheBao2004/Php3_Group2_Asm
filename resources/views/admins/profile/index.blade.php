@@ -32,6 +32,13 @@
                   <span class="text-danger">{{ $message }}</span>
             @enderror
           </div>
+          <div class="form-group mb-3">
+            <label>Mật khẩu (chỉ điền mật khẩu khi muốn sửa mật khẩu)</label>
+            <input type="password" name="password" class="form-control" value="">
+            @error('password')
+                  <span class="text-danger">{{ $message }}</span>
+            @enderror
+          </div>
         <div class="form-group mb-3">
             <label>Địa điểm</label>
             <input type="text" name="address" class="form-control" value="{{ $user->address }}">
