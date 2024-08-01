@@ -126,9 +126,9 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="">shop <i class="fa fa-angle-down"></i></a>
+                                        <li><a href="{{ route('clients.productcatedetail.shop') }}">shop <i class="fa fa-angle-down"></i></a>
                                             {{-- <ul class="dropdown">
-                                                {{ route('clients.shop') }}
+                                                
                                                 <li><a href="#">shop grid layout <i
                                                             class="fa fa-angle-right"></i></a>
                                                     <ul class="dropdown">
