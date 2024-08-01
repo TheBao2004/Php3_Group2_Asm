@@ -19,3 +19,4 @@ yarn-error.log
 /.vscode
 /routes/web.php
 /resources/views/admins/blocks/sidebar.blade.php
+/resources/views/clients/blocks/header.blade.php
