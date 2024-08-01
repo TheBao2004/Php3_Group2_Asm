@@ -46,6 +46,7 @@
 
 
     <main>
+
         <!-- hero slider area start -->
         @yield('content')
         <!-- brand logo area end -->
