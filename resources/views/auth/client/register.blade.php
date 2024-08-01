@@ -2,6 +2,11 @@
 
 @section('content')
 
+@session('msg')
+<div class="alert alert-success">{{ session('msg') }}</div>
+@endsession
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-7">
