@@ -25,6 +25,20 @@
                 <span class="text-danger">{{ $message }}</span>
           @enderror
         </div>
+        <div class="form-group mb-3">
+            <label>Số điện thoại</label>
+            <input type="text" name="phone" class="form-control" value="{{ $user->phone }}">
+            @error('phone')
+                  <span class="text-danger">{{ $message }}</span>
+            @enderror
+          </div>
+        <div class="form-group mb-3">
+            <label>Địa điểm</label>
+            <input type="text" name="address" class="form-control" value="{{ $user->address }}">
+            @error('address')
+                  <span class="text-danger">{{ $message }}</span>
+            @enderror
+          </div>
         <button type="submit" class="btn btn-primary">Lưu</button>
 
 </form>
