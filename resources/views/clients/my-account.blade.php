@@ -224,7 +224,7 @@
                                                                 <div class="single-input-item">
                                                                     <label for="current-pwd" class="required">Current
                                                                         Password</label>
-                                                                    <input type="password" name="old_password" id="current-pwd" placeholder="Current Password" required />
+                                                                    <input type="password" name="old_password" id="current-pwd" placeholder="Current Password" />
                                                                 </div>
                                                                 @error('old_password')
                                                                 <span class="text-danger">{{ $message }}</span>
@@ -234,7 +234,7 @@
                                                                         <div class="single-input-item">
                                                                             <label for="new-pwd" class="required">New
                                                                                 Password</label>
-                                                                            <input type="password" name="password" id="new-pwd" placeholder="New Password" required />
+                                                                            <input type="password" name="password" id="new-pwd" placeholder="New Password"/>
                                                                         </div>
                                                                     </div>
                                                                     @error('password')
@@ -244,7 +244,7 @@
                                                                         <div class="single-input-item">
                                                                             <label for="confirm-pwd" class="required">Confirm
                                                                                 Password</label>
-                                                                            <input type="password" name="confirm_password" id="confirm-pwd" placeholder="Confirm Password" required />
+                                                                            <input type="password" name="confirm_password" id="confirm-pwd" placeholder="Confirm Password" />
                                                                         </div>
                                                                     </div>
                                                                     @error('confirm_password')
