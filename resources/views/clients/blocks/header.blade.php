@@ -63,13 +63,13 @@
                                 <!-- main menu navbar start -->
                                 <nav class="desktop-menu">
                                     <ul>
-                                        <li class="active"><a href="index.html">Home</a>
+                                        <li class="active"><a href="{{ route('index') }}">Home</a>
 
                                         </li>
                                         <li><a href="blog-left-sidebar.html">Danh Mục<i
                                                     class="fa fa-angle-down"></i></a>
                                             <ul class="dropdown">
-                                                @foreach ($categories as $value)
+                                                @foreach ($listCate as $value)
                                                     <li><a href="#">{{ $value->name }}</a></li>
                                                 @endforeach
                                             </ul>

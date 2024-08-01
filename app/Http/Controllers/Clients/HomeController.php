@@ -13,7 +13,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
        $search = $request->input('search');
-        $categories = Categories::where('active',1)->orderBy('name','ASC')->get();
+        $listCate = Categories::get();
         
         $listProduct = Product::query()
         ->when($search,function($query, $search){
@@ -24,6 +24,6 @@ class HomeController extends Controller
 
 
         $product = Product::all();
-        return view('clients.index',compact('categories','listProduct','product'));
+        return view('clients.index',compact('listCate','listProduct','product'));
     }
 }
