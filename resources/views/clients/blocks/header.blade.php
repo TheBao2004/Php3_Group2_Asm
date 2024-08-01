@@ -126,8 +126,9 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="{{ route('clients.shop') }}">shop <i class="fa fa-angle-down"></i></a>
+                                        <li><a href="{{ route('clients.productcatedetail.shop') }}">shop <i class="fa fa-angle-down"></i></a>
                                             {{-- <ul class="dropdown">
+                                                
                                                 <li><a href="#">shop grid layout <i
                                                             class="fa fa-angle-right"></i></a>
                                                     <ul class="dropdown">
@@ -213,10 +214,14 @@
                                             <i class="pe-7s-user"></i>
                                         </a>
                                         <ul class="dropdown-list">
-                                            <li><a href="login-register.html">login</a></li>
-                                            <li><a href="login-register.html">register</a></li>
-                                            <li><a href="my-account.html">my account</a></li>
+                                            @if(Auth::check())
+                                                <li><a href="{{ route('clients.my-account') }}">my account</a></li>
+                                            @else
+                                                <li><a href="{{ route('login') }}">login</a></li>
+                                                <li><a href="{{ route('register') }}">register</a></li>
+                                            @endif
                                         </ul>
+                                        
                                     </li>
                                     <li>
                                         <a href="wishlist.html">
