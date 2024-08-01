@@ -12,9 +12,10 @@ class ShopController extends Controller
     
     public function index()
     {
+        $listCat = Categories::get();
         $listCate = Categories::get();
         $feature_products = Product::limit(3)->get();
-        return view('clients.productcatedetail.shop',compact('feature_products','listCate'));
+        return view('clients.productcatedetail.shop',compact('feature_products','listCate','listCat'));
     }
 
     public function product($id)

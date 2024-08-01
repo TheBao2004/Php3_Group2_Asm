@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Clients;
 
 use App\Models\User;
+use App\Models\Categories;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +17,8 @@ class MyaccountController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('clients.my-account', compact(['user'])) ;
+        $listCat = Categories::get();
+        return view('clients.my-account', compact(['user','listCat'])) ;
     }
 
     public function edit (User $user, Request $request) {
