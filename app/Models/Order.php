@@ -67,4 +67,7 @@ class Order extends Model
 
         return $t;
     }
+    public function user() {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

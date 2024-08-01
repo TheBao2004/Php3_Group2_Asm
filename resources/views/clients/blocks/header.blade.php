@@ -69,7 +69,11 @@
                                         <li><a href="blog-left-sidebar.html">Danh Mục<i
                                                     class="fa fa-angle-down"></i></a>
                                             <ul class="dropdown">
+<<<<<<< Updated upstream
                                                 @foreach ($categories as $value)
+=======
+                                                @foreach ($listCat as $value)
+>>>>>>> Stashed changes
                                                     <li><a href="#">{{ $value->name }}</a></li>
                                                 @endforeach
                                             </ul>
@@ -149,9 +153,15 @@
                                 <ul class="nav justify-content-end">
                                     <li class="header-search-container mr-0">
                                         <button class="search-trigger d-block"><i class="pe-7s-search"></i></button>
+<<<<<<< Updated upstream
                                         <form class="header-search-box d-none">
                                             <input type="text" placeholder="Search entire store hire"
                                                 class="header-search-field">
+=======
+                                        <form class="header-search-box d-none" action="{{ route('index') }}" method="GET">
+                                            <input type="text" placeholder="Search entire store hire"
+                                                class="header-search-field" name="search" value="{{ request('search') }}">
+>>>>>>> Stashed changes
                                             <button class="header-search-btn"><i class="pe-7s-search"></i></button>
                                         </form>
                                     </li>

@@ -12,7 +12,7 @@ class CartController extends Controller
     public function listCart(){
         $cart = session()->get('cart', []);
             // dd(session()->all());
-
+        
         $total = 0;
         $subTotal = 0;
 
