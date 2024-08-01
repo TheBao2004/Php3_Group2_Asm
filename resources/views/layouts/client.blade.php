@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="{{ asset('assets/clients/css/plugins/jqueryui.min.css') }}">
     <!-- main style css -->
     <link rel="stylesheet" href="{{ asset('assets/clients/css/style.css') }}">
-
+        @yield('css')
 </head>
 
 <body>
@@ -289,6 +289,7 @@
     <script src="{{ asset('assets/clients/js/plugins/google-map.js') }}"></script>
     <!-- Main JS -->
     <script src="{{ asset('assets/clients/js/main.js') }}"></script>
+    @yield('js')
 </body>
 
 
